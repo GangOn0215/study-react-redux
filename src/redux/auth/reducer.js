@@ -1,4 +1,5 @@
-import { SIGNIN, LOGOUT } from './types';
+import { LOGIN, LOGOUT } from './types';
+
 const initialState = {
   isAuth: false,
   memberInfo: {},
@@ -8,7 +9,7 @@ const accountReducer = (currentState = initialState, action) => {
   let newState = {};
 
   switch (action.type) {
-    case SIGNIN:
+    case LOGIN:
       newState = {
         ...currentState,
         isAuth: true,
@@ -22,6 +23,7 @@ const accountReducer = (currentState = initialState, action) => {
       newState = initialState;
       break;
     default:
+      newState = initialState;
       break;
   }
 

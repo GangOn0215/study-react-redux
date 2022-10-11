@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { incrementCounter } from '../redux/counter/actions';
 import { decrementCounter } from '../redux/counter/actions';
 
-export const IncCounter = ({ incrementCounter, decrementCounter }) => {
+export const Counting = ({ incrementCounter, decrementCounter }) => {
   return (
     <div className='right3'>
       <h1>Right3</h1>
@@ -26,16 +26,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     incrementCounter: () => dispatch(incrementCounter()),
-//     decrementCounter: () => dispatch(decrementCounter()),
-//   };
-// };
-
 const mapDispatchToProps = {
   incrementCounter: incrementCounter,
   decrementCounter: decrementCounter,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(IncCounter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counting);

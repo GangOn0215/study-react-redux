@@ -5,10 +5,10 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 //component
-import Counter from './components/Counter';
-import IncCounter from './components/IncCounter';
+import CountCheck from './components/CountCheck';
+import Counting from './components/Counting';
 import Login from './components/Login';
-import CheckLogin from './components/CheckLogin';
+import LoginCheck from './components/LoginCheck';
 
 export default function App() {
   return (
@@ -37,8 +37,8 @@ function Left2() {
   return (
     <div>
       <h1>LEFT 2 </h1>
-      <Counter />
-      <CheckLogin />
+      <CountCheck />
+      <LoginCheck />
     </div>
   );
 }
@@ -56,7 +56,7 @@ function Right2() {
   return (
     <div>
       <h1>Right2</h1>
-      <IncCounter />
+      <Counting />
       <Login />
     </div>
   );

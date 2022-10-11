@@ -1,18 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { actionLogin } from '../redux/auth/actions';
+import { actionLogin, actionLogout } from '../redux/auth/actions';
 
-export const Login = ({ auth }) => {
+export const Login = ({ auth, actionLogin, actionLogout }) => {
+  console.log(auth);
   return (
     <div className='right3'>
-      <h1>Right3</h1>
+      <h1>Login</h1>
       <div className='button-box'>
-        <button id='increment'>
-          <b>Increment</b>
-        </button>
-        <button id='decrement'>
-          <b>Decrement</b>
-        </button>
+        {auth.isAuth ? (
+          <button id='decrement' onClick={() => actionLogout()}>
+            <b>Logout</b>
+          </button>
+        ) : (
+          <button id='login' onClick={() => actionLogin()}>
+            <b>Login</b>
+          </button>
+        )}
       </div>
     </div>
   );
@@ -24,15 +28,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     incrementCounter: () => dispatch(incrementCounter()),
-//     decrementCounter: () => dispatch(decrementCounter()),
-//   };
-// };
-
 const mapDispatchToProps = {
   actionLogin: actionLogin,
+  actionLogout: actionLogout,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

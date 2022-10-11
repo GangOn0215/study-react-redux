@@ -1,7 +1,13 @@
-import { SIGNIN } from './types';
+import { LOGIN, LOGOUT } from './types';
 
 export const actionLogin = () => {
   return {
-    type: SIGNIN,
+    type: LOGIN,
+  };
+};
+
+export const actionLogout = () => {
+  return {
+    type: LOGOUT,
   };
 };

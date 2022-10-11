@@ -1,3 +1,3 @@
 export const LOGOUT = 'LOGOUT';
-export const SIGNIN = 'SIGNIN';
+export const LOGIN = 'LOGIN';
 export const SIGNUP = 'SIGNUP';
